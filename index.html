@@ -1,232 +1,279 @@
-<html lang="en">
+<html lang="en" data-theme="light">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
-    <link rel="stylesheet" href="style.css">
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@4.6.1/dist/full.min.css" rel="stylesheet" type="text/css" />
+    <script src="https://cdn.tailwindcss.com"></script>
     <title>CarPro</title>
 </head>
 <body>
-    <!-- navbar -->
-    <nav class="navbar bg-body-secondary fixed-top">
-        <div class="container-fluid">
-          <a class="navbar-brand fs-5" href="#">CarPro</a>
-          <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasDarkNavbar" aria-controls="offcanvasDarkNavbar" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-          </button>
-          <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasDarkNavbar" aria-labelledby="offcanvasDarkNavbarLabel">
-            <div class="offcanvas-header">
-              <h5 class="offcanvas-title" id="offcanvasDarkNavbarLabel">CarPro</h5>
-              <button type="button" class="btn-close btn-close-dark" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+    <!-- nav  -->
+    <div class="fixed navbar bg-blue-500 z-30 text-white">
+        <div class="navbar-start">
+            <div class="dropdown">
+                <div tabindex="0" role="button" class="btn btn-ghost btn-circle">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h7" /></svg>
+                </div>
+                <ul tabindex="0" class="menu menu-sm bg-blue-700 dropdown-content mt-3 z-[1] p-2 shadow rounded-box w-52">
+                    <li><a>Home</a></li>
+                    <li><a>Listings</a></li>
+                    <li><a>Blogs</a></li>
+                    <li><a>About Us</a></li>
+                    <li><a>Contact</a></li>
+                    <li><a><i class="fa-regular fa-user"></i> Sign-in</a></li>
+                    <li>
+                        <div class="">
+                            <input type="search" placeholder="Search Here" class="input input-bordered input-primary text-black w-full max-w-xs" />
+                        </div>
+                    </li>
+                    
+                </ul>
             </div>
-            <div class="offcanvas-body">
-              <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
-                <li class="nav-item">
-                  <a class="nav-link active" href="#">Home</a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link" href="#">Listings</a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link" href="#">Blogs</a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link" href="#">About Us</a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link" href="#">Contact</a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link" href="#"><i class="fa-regular fa-user"></i> Sign-in</a>
-                </li>
-              </ul>
-              <div class="p-3">
-                <button class="btn btn-warning" id="nav-btn">Submit Listings</button>
-              </div>
-            </div>
-          </div>
         </div>
-    </nav>
-    <!-- hero -->
-    <div class="container-fluid" id="hero">
-      <!-- hero text  -->
-      <div class="container text-center text-light" id="hero-text">
-        <p>Find cars for sale and for rent near you</p>
-        <h1>Find Your Perfect Car</h1>
-      </div>
-      <!-- hero selects  -->
-      <div class="container d-flex flex-column" id="hero-filter">
-        <div class="">
-          <select class="form-select form-select-lg mb-3 rounded-5" aria-label="Large select example">
-            <option selected>Any Makes</option>
-            <option value="1">All</option>
-            <option value="2">Ford</option>
-            <option value="3">Audi</option>
-            <option value="4">BMW</option>
-            <option value="5">Toyota</option>
-            <option value="6">Alfa Romeo</option>
-            <option value="7">Aston Martin</option>
-            <option value="8">Bentley</option>
-            <option value="9">Ferrari</option>
-            <option value="10">Honda</option>
-            <option value="11">Hyunda</option>
-            <option value="12">Jeep</option>
-          </select>
+        <div class="navbar-end">
+            <a class="btn btn-ghost text-xl">CarPro</a>
         </div>
-        <div class="">
-          <select class="form-select form-select-lg mb-3 rounded-5" aria-label="Large select example">
-            <option selected>Any Model</option>
-            <option value="1">All</option>
-            <option value="2">Tata Punch</option>
-            <option value="3">Kia Sonet</option>
-            <option value="4">Mahindra</option>
-            <option value="5">Toyota</option>
-            <option value="6">Hyundai Creta</option>
-            <option value="7">Maruti</option>
-            <option value="8">Maruti Swift</option>
-            <option value="9">Tata Nexon</option>
-            <option value="10">Honda</option>
-            <option value="11">Hyundai</option>
-            <option value="12">Camry</option>
-          </select>
-        </div>
-        <div class="">
-          <select class="form-select form-select-lg mb-3 rounded-5" aria-label="Large select example">
-            <option selected>Prices</option>
-            <option value="1">Around 20$k</option>
-            <option value="2">20$k - 30$k</option>
-            <option value="3">30$k - 40$k</option>
-            <option value="4">40$k - 50$k</option>
-            <option value="5">50$k - 60$k</option>
-            <option value="6">60$k - 70$k</option>
-            <option value="7">70$k - 80$k</option>
-            <option value="8">80$k - 90$k</option>
-            <option value="9">Over 90$k</option>
-          </select>
-        </div>
-        <div class="text-center">
-          <button class="btn btn-warning p-3 rounded-5 border-0"><i class="fa-solid fa-magnifying-glass"></i> Search Cars</button>
-        </div>
-      </div>
-      <!-- hero featured models -->
-      <div class="container text-center pt-5" id="hero-or">
-        <p>Featured Models</p>
-        <div class="text-center" id="hero-or2">
-          <button class="btn ps-4 rounded-5"><i class="fa-solid fa-car"></i> SUV</button>
-          <button class="btn ps-4 rounded-5"><i class="fa-solid fa-car"></i> Sedan</button>
-          <button class="btn ps-4 rounded-5"><i class="fa-solid fa-car"></i> Hatchback</button>
-          <button class="btn ps-4 rounded-5"><i class="fa-solid fa-car"></i> Coupe</button>
-          <button class="btn ps-4 rounded-5"><i class="fa-solid fa-car"></i> Hybrid</button>
-        </div>
-      </div>
     </div>
-    <!-- premium brands -->
-    <div class="container-fluid">
-      <div class="mt-5 pt-5 position-relative d-flex" id="pb-head">
-        <h1 class="">Explore Our Premium Brands</h1>
-        <a href="#" class="btn position-absolute end-0 pt-3">Show All Brands <i class="fa-solid fa-angles-right"></i></a>
-      </div>
-      <div class="mt-5 mb-5">
-        <div class="row">
-          <div class="col">
-            <div class="card text-center" id="pb-card">
-              <div class="card-body">
-                <h5 class="card-title p-3">Audi</h5>
-                <a href="#" class="btn btn-outline-danger">Explore</a>
-              </div>
+    <!-- hero -->
+    <div class="hero min-h-screen text-white" style="background-image: url(https://wallpapers.com/images/featured/sports-car-background-ybiazay5uj4y5r5p.jpg);">
+        <div class="hero-overlay bg-opacity-60"></div>
+        <div class="hero-content flex-col lg:flex-row">
+            <div class="text-center lg:text-left mt-7">
+                <p class="py-6">Find cars for sale and for rent near you</p>
+                <h1 class="text-5xl font-bold">Find Your Perfect Car</h1>
             </div>
-          </div>
-          <div class="col">
-            <div class="card text-center" id="pb-card">
-              <div class="card-body">
-                <h5 class="card-title p-3">BMW</h5>
-                <a href="#" class="btn btn-outline-danger">Explore</a>
-              </div>
+            <div class="card shrink-0 w-full max-w-sm shadow-2xl bg-blue-500/50">
+                <form class="card-body">
+                    <div class="form-control">
+                        <select class="select select-primary text-black w-full max-w-xs">
+                            <option disabled selected>Any Makes</option>
+                            <option value="1">All</option>
+                            <option value="2">Ford</option>
+                            <option value="3">Audi</option>
+                            <option value="4">BMW</option>
+                            <option value="5">Toyota</option>
+                            <option value="6">Alfa Romeo</option>
+                            <option value="7">Aston Martin</option>
+                            <option value="8">Bentley</option>
+                            <option value="9">Ferrari</option>
+                            <option value="10">Honda</option>
+                            <option value="11">Hyunda</option>
+                            <option value="12">Jeep</option>
+                        </select>
+                    </div>
+                    <div class="form-control">
+                        <select class="select select-primary text-black w-full max-w-xs">
+                            <option disabled selected>Any Model</option>
+                            <option value="1">All</option>
+                            <option value="2">Tata Punch</option>
+                            <option value="3">Kia Sonet</option>
+                            <option value="4">Mahindra</option>
+                            <option value="5">Toyota</option>
+                            <option value="6">Hyundai Creta</option>
+                            <option value="7">Maruti</option>
+                            <option value="8">Maruti Swift</option>
+                            <option value="9">Tata Nexon</option>
+                            <option value="10">Honda</option>
+                            <option value="11">Hyundai</option>
+                            <option value="12">Camry</option>
+                        </select>
+                    </div>
+                    <div class="form-control">
+                        <select class="select select-primary text-black w-full max-w-xs">
+                            <option selected>Prices</option>
+                            <option value="1">Around 20$k</option>
+                            <option value="2">20$k - 30$k</option>
+                            <option value="3">30$k - 40$k</option>
+                            <option value="4">40$k - 50$k</option>
+                            <option value="5">50$k - 60$k</option>
+                            <option value="6">60$k - 70$k</option>
+                            <option value="7">70$k - 80$k</option>
+                            <option value="8">80$k - 90$k</option>
+                            <option value="9">Over 90$k</option>
+                        </select>
+                    </div>
+                    <div class="form-control mt-6">
+                        <button class="btn btn-primary"><i class="fa-solid fa-magnifying-glass"></i> Search Cars</button>
+                    </div>
+                </form>
             </div>
-          </div>
-          <div class="col">
-            <div class="card text-center" id="pb-card">
-              <div class="card-body">
-                <h5 class="card-title p-3">Ford</h5>
-                <a href="#" class="btn btn-outline-danger">Explore</a>
-              </div>
-            </div>
-          </div>
-          <div class="col">
-            <div class="card text-center" id="pb-card">
-              <div class="card-body">
-                <h5 class="card-title p-3">Ferrari</h5>
-                <a href="#" class="btn btn-outline-danger">Explore</a>
-              </div>
-            </div>
-          </div>
-          <div class="col">
-            <div class="card text-center" id="pb-card">
-              <div class="card-body">
-                <h5 class="card-title p-3">Peugeot</h5>
-                <a href="#" class="btn btn-outline-danger">Explore</a>
-              </div>
-            </div>
-          </div>
-          <div class="col">
-            <div class="card text-center" id="pb-card">
-              <div class="card-body">
-                <h5 class="card-title p-3">Volkswagen</h5>
-                <a href="#" class="btn btn-outline-danger">Explore</a>
-              </div>
-            </div>
-          </div>
         </div>
-      </div>
+    </div>
+    <!-- featured models -->
+    <div class="join p-10 w-full rounded-none join-vertical">
+        <p class="text-center p-5">Featured Models</p>
+        <button class="btn join-item bg-blue-400 hover:text-black text-white active:bg-blue-700 active:text-white"><i class="fa-solid fa-car"></i> SUV</button>
+        <button class="btn join-item bg-blue-400 hover:text-black text-white active:bg-blue-700 active:text-white"><i class="fa-solid fa-car"></i> Sedan</button>
+        <button class="btn join-item bg-blue-400 hover:text-black text-white active:bg-blue-700 active:text-white"><i class="fa-solid fa-car"></i> Hatchback</button>
+        <button class="btn join-item bg-blue-400 hover:text-black text-white active:bg-blue-700 active:text-white"><i class="fa-solid fa-car"></i> Coupe</button>
+        <button class="btn join-item bg-blue-400 hover:text-black text-white active:bg-blue-700 active:text-white"><i class="fa-solid fa-car"></i> Hybrid</button>
+    </div>
+    <!-- reviews -->
+    <div class="stats mx-auto w-full content-center shadow m-5 flex flex-col lg:flex lg:flex-row">
+        <div class="stat">
+            <div class="stat-figure text-secondary">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" class="inline-block w-8 h-8 stroke-current"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+            </div>
+            <div class="stat-title">Customers</div>
+            <div class="stat-value">31K</div>
+            <div class="stat-desc">Jan 1st - Feb 1st</div>
+        </div>
+        <div class="stat w-full">
+            <div class="stat-figure text-secondary">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" class="inline-block w-8 h-8 stroke-current"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6V4m0 2a2 2 0 100 4m0-4a2 2 0 110 4m-6 8a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4m6 6v10m6-2a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4"></path></svg>
+            </div>
+            <div class="stat-title">Likes</div>
+            <div class="stat-value">4,200k</div>
+            <div class="stat-desc">↗︎ 400</div>
+        </div>
+        <div class="stat">
+            <div class="stat-figure text-secondary">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" class="inline-block w-8 h-8 stroke-current"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 8h14M5 8a2 2 0 110-4h14a2 2 0 110 4M5 8v10a2 2 0 002 2h10a2 2 0 002-2V8m-9 4h4"></path></svg>
+            </div>
+            <div class="stat-title">Reviwes</div>
+            <div class="stat-value">1,200k</div>
+            <div class="stat-desc">↗︎ 90</div>
+        </div>
+    </div>
+    <!-- products  -->
+    <div class="container p-5">
+        <div class="container p-3 pb-10 flex justify-between">
+            <h1 class="text-3xl font-semibold">Our Featured Products</h1>
+            <a href="#" class="btn btn-ghost">See More <i class="fa-solid fa-arrow-right-long"></i></a>
+        </div>
+        <div class="container gap-12 flex flex-col lg:flex lg:flex-row">
+            <div class="card w-full bg-blue-700 glass">
+                <figure><img src="https://c4.wallpaperflare.com/wallpaper/323/372/925/lamborghini-car-lamborghini-aventador-vehicle-wallpaper-preview.jpg" alt="car!"/></figure>
+                <div class="card-body text-white">
+                    <h2 class="card-title">New Model Car</h2>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Suscipit, odit.</p>
+                    <div class="card-actions justify-end">
+                        <button class="btn btn-primary hover:bg-white hover:text-blue-900">Learn now!</button>
+                    </div>
+                </div>
+            </div>
+            <div class="card w-full bg-blue-700 glass">
+                <figure><img src="https://c4.wallpaperflare.com/wallpaper/9/669/180/cars-high-resolution-desktop-wallpaper-preview.jpg" alt="car!"/></figure>
+                <div class="card-body text-white">
+                    <h2 class="card-title">New Model Car</h2>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Suscipit, odit.</p>
+                    <div class="card-actions justify-end">
+                        <button class="btn btn-primary hover:bg-white hover:text-blue-900">Learn now!</button>
+                    </div>
+                </div>
+            </div>
+            <div class="card w-full bg-blue-700 glass">
+                <figure><img src="https://www.pixground.com/wp-content/uploads/2023/08/Bugatti-Chiron-Profilee-4K-Wallpaper-1024x576.webp" alt="car!"/></figure>
+                <div class="card-body text-white">
+                    <h2 class="card-title">New Model Car</h2>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Suscipit, odit.</p>
+                    <div class="card-actions justify-end">
+                        <button class="btn btn-primary hover:bg-white hover:text-blue-900">Learn now!</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- fpremium models  -->
+    <div class="container p-5">
+        <div class="container p-3 pb-10 flex justify-between">
+            <h1 class="text-3xl font-semibold">Our Featured Products</h1>
+            <a href="#" class="btn btn-ghost">See More <i class="fa-solid fa-arrow-right-long"></i></a>
+        </div>
+        <div class="container gap-3 flex flex-col lg:flex lg:flex-row">
+            <div class="card w-full bg-purple-800 bg-opacity-80 glass shadow-xl">
+                <div class="card-body text-white">
+                    <h2 class="card-title justify-center">Audi</h2>
+                    <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. At quas autem, odit minus dicta iste quia repellat!</p>
+                    <div class="card-actions justify-end">
+                        <button class="btn btn-primary hover:bg-white hover:text-blue-900">Explore</button>
+                    </div>
+                </div>
+            </div>
+            <div class="card w-full bg-purple-800 bg-opacity-80 glass shadow-xl">
+                <div class="card-body text-white">
+                    <h2 class="card-title justify-center">BMW</h2>
+                    <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. At quas autem, odit minus dicta iste quia repellat!</p>
+                    <div class="card-actions justify-end">
+                        <button class="btn btn-primary hover:bg-white hover:text-blue-900">Explore</button>
+                    </div>
+                </div>
+            </div>
+            <div class="card w-full bg-purple-800 bg-opacity-80 glass shadow-xl">
+                <div class="card-body text-white">
+                    <h2 class="card-title justify-center">Ford</h2>
+                    <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. At quas autem, odit minus dicta iste quia repellat!</p>
+                    <div class="card-actions justify-end">
+                        <button class="btn btn-primary hover:bg-white hover:text-blue-900">Explore</button>
+                    </div>
+                </div>
+            </div>
+            <div class="card w-full bg-purple-800 bg-opacity-80 glass shadow-xl">
+                <div class="card-body text-white">
+                    <h2 class="card-title justify-center">Ferrari</h2>
+                    <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. At quas autem, odit minus dicta iste quia repellat!</p>
+                    <div class="card-actions justify-end">
+                        <button class="btn btn-primary hover:bg-white hover:text-blue-900">Explore</button>
+                    </div>
+                </div>
+            </div>
+            <div class="card w-full bg-purple-800 bg-opacity-80 glass shadow-xl">
+                <div class="card-body text-white">
+                    <h2 class="card-title justify-center">Peugeot</h2>
+                    <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. At quas autem, odit minus dicta iste quia repellat!</p>
+                    <div class="card-actions justify-end">
+                        <button class="btn btn-primary hover:bg-white hover:text-blue-900">Explore</button>
+                    </div>
+                </div>
+            </div>
+            <div class="card w-full bg-purple-800 bg-opacity-80 glass shadow-xl">
+                <div class="card-body text-white">
+                    <h2 class="card-title justify-center">Peugeot</h2>
+                    <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. At quas autem, odit minus dicta iste quia repellat!</p>
+                    <div class="card-actions justify-end">
+                        <button class="btn btn-primary hover:bg-white hover:text-blue-900">Explore</button>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
     <!-- why choose us  -->
-    <div class="container-fluid">
-      <div class="text-center p-3">
-        <h1>Why Choose Us?</h1>
-      </div>
-      <div class="">
-        <div class="row pt-3 pb-4">
-          <div class="col">
-            <div class="card border-warning mb-3">
-              <div class="card-body" id="s">
-                <i class="bi bi-envelope-check"></i>
-                <h5 class="card-title">Special Financing Offers</h5>
-                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-              </div>
-            </div>
-          </div>
-          <div class="col">
-            <div class="card border-warning mb-3">
-              <div class="card-body" id="s">
-                <i class="fa-regular fa-gem"></i>
-                <h5 class="card-title">Trusted Car Dealership</h5>
-                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-              </div>
-            </div>
-          </div>
-          <div class="col">
-            <div class="card border-warning mb-3">
-              <div class="card-body" id="s">
-                <i class="fa-solid fa-tags"></i>
-                <h5 class="card-title">Transparent Pricing</h5>
-                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-              </div>
-            </div>
-          </div>
-          <div class="col">
-            <div class="card border-warning mb-3">
-              <div class="card-body" id="s">
-                <i class="fa-solid fa-screwdriver-wrench"></i>
-                <h5 class="card-title">Expert CAr Service</h5>
-                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-              </div>
-            </div>
-          </div>
+    <div class="container p-5">
+        <div class="container p-3 pb-10 flex justify-between">
+            <h1 class="text-3xl font-semibold">Our Featured Products</h1>
+            <a href="#" class="btn btn-ghost">See More <i class="fa-solid fa-arrow-right-long"></i></a>
         </div>
-      </div>
+        <div class="container gap-12 flex flex-col lg:flex lg:flex-row">
+            <div class="card border-warning mb-3">
+                <div class="card-body" id="s">
+                    <i class="fa-solid fa-envelope-circle-check"></i>
+                    <h5 class="card-title">Special Financing Offers</h5>
+                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                </div>
+            </div>
+            <div class="card border-warning mb-3">
+                <div class="card-body" id="s">
+                    <i class="fa-regular fa-gem"></i>
+                    <h5 class="card-title">Trusted Car Dealership</h5>
+                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                </div>
+            </div>
+            <div class="card border-warning mb-3">
+                <div class="card-body" id="s">
+                    <i class="fa-solid fa-tags"></i>
+                    <h5 class="card-title">Transparent Pricing</h5>
+                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                </div>
+            </div>
+            <div class="card border-warning mb-3">
+                <div class="card-body" id="s">
+                    <i class="fa-solid fa-screwdriver-wrench"></i>
+                    <h5 class="card-title">Expert Car Service</h5>
+                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                </div>
+            </div>
+        </div>
     </div>
 </body>
 </html>
